@@ -6,4 +6,12 @@ class LeaguesController < ApplicationController
       format.json { render json: @leagues }
     end
   end
+  
+  def show
+    @league = League.find_by(acronym: params[:id])
+    
+    respond_to do |format|
+      format.json { render json: @league }
+    end
+  end
 end
