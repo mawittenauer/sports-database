@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161112224803) do
+ActiveRecord::Schema.define(version: 20161116150539) do
+
+  create_table "conferences", force: :cascade do |t|
+    t.string  "name"
+    t.string  "acronym"
+    t.integer "league_id"
+  end
 
   create_table "leagues", force: :cascade do |t|
     t.string "name"
