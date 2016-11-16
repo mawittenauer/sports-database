@@ -1,4 +1,5 @@
 class LeaguesController < ApplicationController
+  before_action :get_league, except: :index
   def index
     @leagues = League.all
     
@@ -7,11 +8,21 @@ class LeaguesController < ApplicationController
     end
   end
   
-  def show
-    @league = League.find_by(acronym: params[:id])
-    
+  def show    
     respond_to do |format|
-      format.json { render json: @league }
+      format.json { render json: @league.conferences }
     end
+  end
+  
+  def show_teams    
+    respond_to do |format|
+      format.json { render json: @league.teams }
+    end
+  end
+  
+  private
+  
+  def get_league
+    @league = League.find_by(acronym: params[:id])
   end
 end
