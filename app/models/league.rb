@@ -8,4 +8,12 @@ class League < ActiveRecord::Base
   def teams
     divisions.map { |division| division.teams }.flatten
   end
+  
+  def as_json(options={})
+    {
+      name: name,
+      acronym: acronym,
+      sport: sport
+    }
+  end
 end
