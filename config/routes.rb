@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get "/schedule/:team/:season", to: "schedules#schedule"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
+  get "/logout", to: "sessions#destroy"
   get "/admin", to: "admins#control_panel"
 end
