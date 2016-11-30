@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get "/leagues/:id/teams", to: "leagues#show_teams"
   get "/schedule/:team/:season", to: "schedules#schedule"
   get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
 end

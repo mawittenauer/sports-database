@@ -1,1 +1,9 @@
 <h1 class="text-center">Log In</h1>
+<br>
+<div class="well col-sm-8 col-sm-offset-2">
+  <%= bootstrap_form_tag url: '/login' do |f| %>
+    <%= f.text_field :username %>
+    <%= f.password_field :password %>
+    <%= f.submit "Login" %>
+  <% end %>
+</div>
